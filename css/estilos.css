@@ -96,6 +96,7 @@ ul{
 .contenedor .pie{
     background: rgb(0, 0, 0);
     color: #fff;
+    text-align: center;
     grid-area: pie; 
 }
 
