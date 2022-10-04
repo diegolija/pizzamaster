@@ -1,10 +1,4 @@
 
-:root{
-    --white: #f9f9f9;
-    --black: #36383F;
-    --grey: #85888C;
-}
-
 *{
     margin: 0;
     padding: 0;
@@ -25,6 +19,15 @@ a{
 ul{
     list-style: none;
 }
+
+/* Colores del Menu */
+
+:root{
+    --white: #f9f9f9;
+    --black: #36383F;
+    --grey: #85888C;
+}
+
 .contenedor{
     width: 100%;
     max-width: 1000px; 
@@ -44,18 +47,15 @@ ul{
 /* Definiciones generales del contenedor */
 
 .contenedor > div,
-/*.contenedor .encabezado,*/
 .contenedor .contenido,
 .contenedor .sidebar,
 .contenedor .pie {
     padding: 20px;
-    border-radius: 1px;
 }
 
 .contenedor .encabezado{
     background: #48d4ff;
     color: #fff;
-    /*position: sticky; */
     top: 0;
     width: 100%;  
     grid-area: encabezado;
@@ -110,21 +110,24 @@ ul{
 }
 /* Logo */
 .logo{
-    width: 10rem;
+    width: 7.5rem;
     height: auto;
     display: inline-block;
     /* margin-left: 0.25rem;*/
     margin-top: 0.25rem;
 }
 
-/* Definciones del Menu de Navegacion */
+/* Definciones generales del Menu de Navegacion */
+
 .nav{
     width: 100%;
-    height: 100%;
+    /* height: 100%;*/
     /* position:fixed;*/
+    position:absolute; 
     background-color: var(--black);
     overflow: hidden;
-    
+    z-index: 9999;
+    opacity: 0.95;       
 }
 
 .menu a{
@@ -144,7 +147,7 @@ ul{
     transition: max-height .5s ease-out;
 }
 
-/* Menu Icon */
+/* dibujo del icono hamburguesa con 3 rayas */
 
 .hamb{
     cursor: pointer;
@@ -186,7 +189,7 @@ ul{
     display: none;
 }
 
-/* Toggle menu icon */
+/* transformacion del ícono hamburguesa en X */
 
 .side-menu:checked ~ nav{
     max-height: 100%;
@@ -206,6 +209,7 @@ ul{
     transform: rotate(45deg);
     top:0;
 }
+
 /* Punto de quiebre para pantallas intermedias (tablets) */
 @media screen and (min-width: 768px){
     .contenedor{
@@ -240,7 +244,7 @@ ul{
     }
 
     .logo{
-        width: 200px;
+        width: 11rem;
         height: auto;
         display: inline-block;
         margin-left: 0.25rem;
@@ -267,11 +271,16 @@ ul{
 }
 
 /* Estilos del footer */
+.footer-social-media {
+    display: flex;
+    justify-content: center;
+}
+
 .footer-social-media a {
     text-decoration: none;
     color: #ffffff;
     font-size: 2rem;
-    margin: 1rem;
+    margin: 1rem;    
 }
 
 .footer-social-media a:hover {
