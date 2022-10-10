@@ -35,20 +35,24 @@ ul{
     display: grid;
     /*gap: 20px;*/
     grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(5, auto);
     /*defino grid "First Mobile" */
-    grid-template-areas:  "encabezado encabezado encabezado"
-                          "contenido contenido contenido"
-                          "sidebar sidebar sidebar"
-                          "widget-1 widget-2 widget-2"
-                          "pie pie pie";
+    grid-template-areas: "encabezado encabezado encabezado"
+                         "contenido contenido contenido"
+                         "widget-1 widget-1 widget-1"
+                         "widget-2 widget-2 widget-2"
+                         "widget-3 widget-3 widget-3"
+                         "widget-4 widget-4 widget-4"
+                         "widget-5 widget-5 widget-5"
+                         "widget-6 widget-6 widget-6"
+                         "pie pie pie";
+                          
 }
 
 /* Definiciones generales del contenedor */
 
 .contenedor > div,
 .contenedor .contenido,
-.contenedor .sidebar,
+.contenedor .variedades,
 .contenedor .pie {
     padding: 20px;
 }
@@ -67,22 +71,20 @@ ul{
     grid-area: contenido; 
 }
 
-.contenedor .sidebar{
-    background: orange;
-    display: flex;
-    align-items:baseline;
-    justify-content: center;
-    grid-area: sidebar; 
-}
-
 .contenedor .widget-1,
-.contenedor .widget-2{
+.contenedor .widget-2,
+.contenedor .widget-3,
+.contenedor .widget-4,
+.contenedor .widget-5,
+.contenedor .widget-6 {
     background: rgb(255, 255, 255);
-    color: rgb(237, 38, 12);
-    height: 100%;
+    color: #000;
+    height: 180px;
     display: flex;
-    align-items: baseline;
-    justify-content: center;
+    align-items: center;
+    justify-content: center;    
+    position: relative;
+	overflow: hidden;
 }
 
 .contenedor .widget-1{
@@ -91,6 +93,55 @@ ul{
 
 .contenedor .widget-2{
     grid-area: widget-2; 
+}
+.contenedor .widget-3{
+    grid-area: widget-3; 
+}
+.contenedor .widget-4{
+    grid-area: widget-4; 
+}
+.contenedor .widget-5{
+    grid-area: widget-5; 
+}
+.contenedor .widget-6{
+    grid-area: widget-6; 
+}
+
+.contenedor .ficha {
+    margin: 0.5 rem;
+    width: 95%;
+	height: 100%;
+	display: flex;
+    flex-direction: column;
+	justify-content: first baseline; 
+    background-size: 140%;
+    background-position: center center;
+    background-repeat: no-repeat;     
+    box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, .2); 
+    cursor: pointer;
+}
+
+.contenedor .ficha:hover {
+    transform: scale(1.1);
+}
+
+.contenedor .ficha h3{
+    display: flex;
+    margin: 0 auto;  
+    padding:5px;background-color:black;color:orange;
+}
+.contenedor .ficha p{
+    display: flex;
+    margin: 0 auto;  
+    padding:5px;background-color:black;color:rgb(255, 254, 253);
+}
+
+.contenedor .ficha span{
+    display: flex;
+    margin: 0 auto; 
+    font-size: 2em; 
+    color: rgb(0, 0, 0); 
+    padding:5px;
 }
 
 .contenedor .pie{
@@ -104,10 +155,6 @@ ul{
     height: auto;
 }
 
-.imagen_widget{
-    width: 100%;
-    height: auto;
-}
 /* Logo */
 .logo{
     width: 7.5rem;
@@ -210,11 +257,12 @@ ul{
 /* Punto de quiebre para pantallas intermedias (tablets) */
 @media screen and (min-width: 768px){
     .contenedor{
-        grid-template-areas:     "encabezado encabezado encabezado"
-                                 "contenido contenido contenido"
-                                 "contenido contenido contenido"
-                                 "widget-1 widget-2 sidebar"
-                                 "pie pie pie";
+        grid-template-areas: "encabezado encabezado encabezado"
+                             "contenido contenido contenido"
+                             "widget-1 widget-1 widget-2"
+                             "widget-3 widget-3 widget-4"
+                             "widget-5 widget-5 widget-6"
+                             "pie pie pie";
     }
     .nav{
         max-height: none;
@@ -253,9 +301,9 @@ ul{
 @media screen and (min-width: 1024px){
     .contenedor{
         grid-template-areas: "encabezado encabezado encabezado"
-                             "contenido contenido sidebar"
-                             "contenido contenido sidebar"
-                             "widget-1 widget-2 sidebar"
+                             "contenido contenido contenido"
+                             "widget-1 widget-2 widget-3"
+                             "widget-4 widget-5 widget-6"
                              "pie pie pie";
     }
     .logo{
