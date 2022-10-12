@@ -23,7 +23,6 @@
             <!-- Menu -->
             <nav class="nav">
                 <ul class="menu">
-                    <li><a href="index.html">HOME</a></li>
                     <li><a href="historia.html">HISTORIA</a></li>
                     <li><a href="variedades.html">VARIEDADES</a> </li>
                     <li><a href="contacto.html">CONTACTO</a></li>
@@ -33,12 +32,12 @@
         <main class="contenido">
             <div class="form-group">
                 <h1>Dejanos tus comentarios</h1>
-                <form action="" method="post" id="form" action="https://formspree.io/f/xyyvjbad">
+                <form id="form" action="https://formspree.io/f/xyyvjbad" method="post">
                     <label class="label" for="nombre">Nombre Completo <span>*</span></label>
-                    <input  class="form-control" type="text" name="nombre" required id="nombre" placeholder="Juan Perez">
+                    <input  class="form-control" type="text" name="nombre" id="nombre" placeholder="Juan Perez" maxlength="100">
                     <br>
                     <label class="label" for="email">Correo electrónico <span>*</span></label>
-                    <input class="form-control" type="text" name="email" required id="email" placeholder="jperez@gmail.com">
+                    <input class="form-control" type="email" name="email" id="email" placeholder="jperez@gmail.com">
                     <br>
                     <label class="label" for="mensaje">Mensaje </label>
                     <textarea class="form-control" name="mensaje" id="mensaje" cols="30" rows="10"></textarea>
@@ -56,38 +55,7 @@
             </div>
         </footer>
     </div>
-<script>
-    const $form = document.querySelector('#form')
-    const $botonMaito = document.querySelector('#mailto')
-
-    $form.addEventListener('submit',handleSubmit)
-
-
-    async function handleSubmit(event){
-        event.preventDefault() /* evitamos que se recargue la página al enviar */
-        const form = new FormData(this) /* le pasamos el formulario al FormData */
-        const response = await fetch(this.action, {//la funcion devuelve de manera asincrónica la respuesta mediando response.ok
-            method: this.method, // La API solicita el metodo y body del formulario que estoy enviando
-            body: form,
-            headers: {
-               'Accept': 'application/json' // Es lo que voy a aceptar que me devuelva
-            }
-        })
-
-        if (response.ok){
-            this.reset // resetea los campos del formulario
-            /* Colocamos un mensaje de agragdecimiento para el usuario */
-            alert('Gracias por contactarte con PizzaMaster. Pronto nos pondremos en contacto contigo. :)')
-        }
-        
-    
-        //    $botonMaito.setAttribute('href',`mailto:luis.sottosanto@gmail.com?subject=${form.get('nombre')}${form.get('email')}&body=${form.get('mensaje')}`)
-    //    $botonMaito.click()
-    }
-
-
-</script>
-
+    <script src="js/contacto.js"></script>
 </body>
 
 </html>
