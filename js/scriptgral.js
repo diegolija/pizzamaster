@@ -1,4 +1,3 @@
-
 let header = `
     <a href="index.html"><img class="logo" src="img/pizza-master-logo.png" alt=""></a>
     <!-- Hamburger icon -->
@@ -7,6 +6,7 @@ let header = `
     <!-- Menu -->
     <nav class="nav">
         <ul class="menu">
+            <li><a href="index.html">HOME</a></li>
             <li><a href="index.html">HISTORIA</a></li>
             <li><a href="variedades.html">VARIEDADES</a> </li>
             <li><a href="contacto.html">CONTACTO</a></li>

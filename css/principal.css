@@ -1,0 +1,54 @@
+/* Colores del Menu */
+:root{
+    --white: #f9f9f9;
+    --black: #36383F;
+    --grey: #85888C;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #48d4ff;
+    background-image: url("../img/back-pizza.png");
+    background-size: 100px; 
+    color: #000;
+    font-family: 'ubuntu', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+
+/* Estilos del footer */
+.footer-social-media a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 2rem;
+    margin: 1rem;
+}
+
+.footer-social-media a:hover {
+    transition: .5s;
+}
+
+#instagram:hover {
+    color: hwb(59 15% 22%);
+}
+
+#facebook:hover {
+    color: #18ebf2;
+}
+
+#whatsapp:hover {
+    color: #bb450e;
+}
+
+
