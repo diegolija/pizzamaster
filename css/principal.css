@@ -25,7 +25,233 @@ a{
 ul{
     list-style: none;
 }
+/* Definiciones generales del contenedor */
+.contenedor{
+    width: 100%;
+    max-width: 1000px; 
+    margin: 0px auto; 
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(5, auto);
+}
 
+.contenedor > div,
+.contenedor .contenido,
+.contenedor .variedades,
+.contenedor .sidebar,
+.contenedor .pie {
+    padding: 20px;
+}
+
+.contenedor .encabezado{
+    background: #48d4ff;
+    color: #fff;
+    top: 0;
+    width: 100%;  
+    grid-area: encabezado;
+}
+
+.contenedor .contenido{
+    background: #fff;
+    grid-area: contenido; 
+}
+
+.contenedor .sidebar{
+    background: orange;
+    display: flex;
+    align-items:baseline;
+    justify-content: center;
+    grid-area: sidebar; 
+}
+
+.contenedor .widget-1,
+.contenedor .widget-2,
+.contenedor .widget-3,
+.contenedor .widget-4,
+.contenedor .widget-5,
+.contenedor .widget-6 {
+    background: rgb(255, 255, 255);
+    color: #000;
+    height: 100%;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;    
+    position: relative;
+	overflow: hidden;
+}
+
+.contenedor .widget-1{
+    grid-area: widget-1; 
+}
+
+.contenedor .widget-2{
+    grid-area: widget-2; 
+}
+.contenedor .widget-3{
+    grid-area: widget-3; 
+}
+.contenedor .widget-4{
+    grid-area: widget-4; 
+}
+.contenedor .widget-5{
+    grid-area: widget-5; 
+}
+.contenedor .widget-6{
+    grid-area: widget-6; 
+}
+
+.contenedor .ficha {
+    margin: 0.5 rem;
+    width: 95%;
+	height: 100%;
+	display: flex;
+    flex-direction: column;
+	justify-content: first baseline; 
+    background-size: 140%;
+    background-position: center center;
+    background-repeat: no-repeat;     
+    box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, .2); 
+    cursor: pointer;
+}
+
+.contenedor .ficha:hover {
+    transform: scale(1.1);
+}
+
+.contenedor .ficha h3{
+    display: flex;
+    margin: 0 auto;  
+    padding:5px;background-color:black;color:orange;
+}
+.contenedor .ficha p{
+    display: flex;
+    margin: 0 auto;  
+    padding:5px;background-color:black;color:rgb(255, 254, 253);
+}
+
+.contenedor .ficha span{
+    display: flex;
+    margin: 0 auto; 
+    font-size: 2em; 
+    color: rgb(0, 0, 0); 
+    padding:5px;
+}
+
+.contenedor .pie{
+    background: rgb(0, 0, 0);
+    color: #fff;
+    text-align: center;
+    grid-area: pie; 
+}
+
+.imagen_portada{
+    width: 100%;
+    height: auto;
+}
+
+.imagen_widget{
+    width: 100%;
+    height: auto;
+}
+
+/* Logo */
+.logo{
+    width: 7.5rem;
+    height: auto;
+    display: inline-block;
+    margin-top: 0.25rem;
+}
+
+/* Definiciones generales del Menu de Navegacion */
+
+.nav{
+    width: 100%;
+    position:absolute; 
+    background-color: var(--black);
+    overflow: hidden;
+    z-index: 9999;
+    opacity: 0.95;       
+}
+
+.menu a{
+    font-size: 20px;
+    display: block;
+    padding: 30px;
+    color: var(--white);
+
+}
+
+.menu a:hover{
+    background-color: var(--grey);
+}
+
+.nav{
+    max-height: 0;
+    transition: max-height .5s ease-out;
+}
+
+/* dibujo del icono hamburguesa con 3 rayas */
+
+.hamb{
+    cursor: pointer;
+    float: right;
+    padding: 40px 20px;
+}
+
+
+.hamb-line {
+    background: var(--white);
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 24px;
+    
+}
+
+.hamb-line::before,
+.hamb-line::after{
+    background: var(--white);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+.hamb-line::before{
+    top: 5px;
+}
+
+.hamb-line::after{
+    top: -5px;
+}
+
+
+.side-menu {
+    display: none;
+}
+
+/* transformacion del ícono hamburguesa en X */
+
+.side-menu:checked ~ nav{
+    max-height: 100%;
+}
+
+.side-menu:checked ~ .hamb .hamb-line {
+    background: transparent;
+}
+
+.side-menu:checked ~ .hamb .hamb-line::before {
+    transform: rotate(-45deg);
+    top:0;
+
+}
+
+.side-menu:checked ~ .hamb .hamb-line::after {
+    transform: rotate(45deg);
+    top:0;
+}
 
 /* Estilos del footer */
 .footer-social-media a {
@@ -52,3 +278,48 @@ ul{
 }
 
 
+/* Punto de quiebre para pantallas intermedias (tablets) */
+@media screen and (min-width: 768px){
+    .nav{
+        max-height: none;
+        top: 0;
+        position: relative;
+        float: right;
+        width: fit-content;
+        background-color: transparent;
+
+    }
+    
+    .menu li{
+        float: left;
+    }
+
+    .menu a:hover{
+        background-color: transparent;
+        color: var(--grey);
+        
+    }
+    
+    .hamb{
+        display: none;
+    }
+
+    .logo{
+        width: 11rem;
+        height: auto;
+        display: inline-block;
+        margin-left: 0.25rem;
+        margin-top: 0.25rem;
+    }
+}
+
+/* Punto de quiebre para pantallas grandes (notebook/desktop) */
+@media screen and (min-width: 1024px){
+    .logo{
+        width: 14rem;
+        height: auto;
+        display: inline-block;
+        margin-left: 0.25rem;
+        margin-top: 0.25rem;
+    }
+}

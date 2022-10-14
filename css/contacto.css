@@ -1,11 +1,10 @@
 .contenedor{
-    width: 100%;
+    /* width: 100%;
     max-width: 1000px; 
     margin: 0px auto; 
     display: grid;
-    /*gap: 20px;*/
     grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(5, auto);
+    grid-template-rows: repeat(5, auto); */
     /*defino grid "First Mobile" */
     grid-template-areas:  "encabezado encabezado encabezado"
                           "contenido contenido contenido"
@@ -16,45 +15,43 @@
 
 /* Definiciones generales del contenedor */
 
-.contenedor > div,
+/* .contenedor > div,
 .contenedor .contenido,
 .contenedor .pie {
     padding: 20px;
-    border-radius: 1px;
-}
+} */
 
-.contenedor .encabezado{
+/* .contenedor .encabezado{
     background: #48d4ff;
     color: #fff;
-    /*position: sticky; */
     top: 0;
     width: 100%;  
     grid-area: encabezado;
   
-}
+} */
 
-.contenedor .contenido{
+/* .contenedor .contenido{
     background: #fff;
     grid-area: contenido; 
-}
+} */
 
-.contenedor .pie{
+/* .contenedor .pie{
     background: rgb(0, 0, 0);
     color: #fff;
     text-align: center;
     grid-area: pie; 
-}
+} */
 
 /* Logo */
-.logo{
+/* .logo{
     width: 7.5rem;
     height: auto;
     display: inline-block;
     margin-top: 0.25rem;
-}
+} */
 
 /* Definciones del Menu de Navegacion */
-.nav{
+/* .nav{
     width: 100%;
     position:absolute; 
     background-color: var(--black);
@@ -81,11 +78,11 @@
 .nav{
     max-height: 0;
     transition: max-height .5s ease-out;
-}
+} */
 
 /* Menu Icon */
 
-.hamb{
+/* .hamb{
     cursor: pointer;
     float: right;
     padding: 40px 20px;
@@ -123,11 +120,11 @@
 
 .side-menu {
     display: none;
-}
+} */
 
 /* Toggle menu icon */
 
-.side-menu:checked ~ nav{
+/* .side-menu:checked ~ nav{
     max-height: 100%;
 }
 
@@ -144,7 +141,7 @@
 .side-menu:checked ~ .hamb .hamb-line::after {
     transform: rotate(45deg);
     top:0;
-}
+} */
 /* Punto de quiebre para pantallas intermedias (tablets) */
 @media screen and (min-width: 768px){
     .contenedor{
@@ -153,25 +150,6 @@
                                  "contenido contenido contenido"
                                  "contenido contenido contenido"
                                  "pie pie pie";
-    }
-    .nav{
-        max-height: none;
-        top: 0;
-        position: relative;
-        float: right;
-        width: fit-content;
-        background-color: transparent;
-
-    }
-    
-    .menu li{
-        float: left;
-    }
-
-    .menu a:hover{
-        background-color: transparent;
-        color: var(--grey);
-        
     }
     /* .nav{
         max-height: none;
@@ -191,7 +169,7 @@
         background-color: transparent;
         color: var(--grey);
         
-    } */
+    }
     
     .hamb{
         display: none;
@@ -203,7 +181,7 @@
         display: inline-block;
         margin-left: 0.25rem;
         margin-top: 0.25rem;
-    }
+    } */
 }
 
 /* Punto de quiebre para pantallas grandes (notebook/desktop) */
@@ -215,13 +193,13 @@
                              "contenido contenido contenido"
                              "pie pie pie";
     }
-    .logo{
+    /* .logo{
         width: 14rem;
         height: auto;
         display: inline-block;
         margin-left: 0.25rem;
         margin-top: 0.25rem;
-    }
+    } */
 }
 /* Estilos para el formulario*/
 .fomulario {
@@ -246,7 +224,6 @@ h1 {
     width: 100%;
 }
 
-/*----------------------------------------------------------------------------*/
 #mailto{
     opacity: 0;
 }
