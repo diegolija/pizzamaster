@@ -13,46 +13,38 @@ async function handleSubmit(event){
         }
     })
 
-    return response.ok; // Retorna el resultado de la Promesa
-}
-
-
-var validarNyA = function (event) {
-    if ($form.nombre.value == 0) {      
-        alert("Debes completar el campo de Nombre y Apellido.");
-        event.preventDefault();             
-    }
-};
-
-var validarEMail = function (event) {
-    if ($form.email.value == 0) {      
-        alert("Debes completar el campo de Correo Electrónico.");
-        event.preventDefault();             
-    }
-};
-
-var validarMsj = function (event) {
-    if ($form.mensaje.value == 0) {      
-        alert("Debes completar el campo de Mensaje.");
-        event.preventDefault();             
-    }
-};
-
-var validar = function (event) { 
-    validarNyA(event); // Valida el Nombre y Apellido 
-    validarEMail(event); // Valida que haya cargado el mail
-    validarMsj(event); // Valida que haya cargado un mensaje
-
-    var respuesta = handleSubmit(event); // Ejecuta la funcion asincrónica que llama a Formspree
-
-    if (respuesta)  //Según el resultado limpia el formulario y da un mensaje
+    if (response.ok)
     {
         $form.reset() // resetea los campos del formulario
         // Colocamos un mensaje de agragdecimiento para el usuario 
         alert('Gracias por contactarte con PizzaMaster. Pronto nos pondremos en contacto contigo. :)')
-
     }
 
-};
+}
 
-$form.addEventListener("submit", validar);
+
+function validar(event) {
+    if (document.form.nombre.value.length == 0) {// Valida el Nombre y Apellido
+        alert("Debes completar el campo de Nombre y Apellido.")
+        document.form.nombre.focus()
+        event.preventDefault()    
+        return 0;
+    }
+    if (document.form.email.value.length == 0) {// Valida que haya cargado el mail
+        alert("Debes completar el campo de Correo Electrónico.")
+        document.form.email.focus()
+        event.preventDefault()    
+        return 0;
+    }
+
+    if (document.form.mensaje.value.length == 0) {// Valida que haya cargado un mensaje
+        alert("Debes completar el campo de Mensaje.")
+        document.form.mensaje.focus()
+        event.preventDefault()    
+        return 0;
+    }
+    var dato = handleSubmit(event)
+
+}
+
+$form.addEventListener("submit", validar)

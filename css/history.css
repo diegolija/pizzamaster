@@ -1,3 +1,33 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #48d4ff;
+    background-image: url("../img/back-pizza.png");
+    background-size: 100px; 
+    color: #000;
+    font-family: 'ubuntu', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+/* Colores del Menu */
+
+:root{
+    --white: #f9f9f9;
+    --black: #36383F;
+    --grey: #85888C;
+}
+
 .contenedor{
     width: 100%;
     max-width: 1000px; 
@@ -9,8 +39,8 @@
     /*defino grid "First Mobile" */
     grid-template-areas:  "encabezado encabezado encabezado"
                           "contenido contenido contenido"
-                          "contenido contenido contenido"
-                          "contenido contenido contenido"
+                          "sidebar sidebar sidebar"
+                          "widget-1 widget-2 widget-2"
                           "pie pie pie";
 }
 
@@ -18,15 +48,14 @@
 
 .contenedor > div,
 .contenedor .contenido,
+.contenedor .sidebar,
 .contenedor .pie {
     padding: 20px;
-    border-radius: 1px;
 }
 
 .contenedor .encabezado{
     background: #48d4ff;
     color: #fff;
-    /*position: sticky; */
     top: 0;
     width: 100%;  
     grid-area: encabezado;
@@ -38,24 +67,62 @@
     grid-area: contenido; 
 }
 
+.contenedor .sidebar{
+    background: orange;
+    display: flex;
+    align-items:baseline;
+    justify-content: center;
+    grid-area: sidebar; 
+}
+
+.contenedor .widget-1,
+.contenedor .widget-2{
+    background: rgb(255, 255, 255);
+    color: rgb(237, 38, 12);
+    height: 100%;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.contenedor .widget-1{
+    grid-area: widget-1; 
+}
+
+.contenedor .widget-2{
+    grid-area: widget-2; 
+}
+
 .contenedor .pie{
     background: rgb(0, 0, 0);
     color: #fff;
-    text-align: center;
     grid-area: pie; 
 }
 
+.imagen_portada{
+    width: 100%;
+    height: auto;
+}
+
+.imagen_widget{
+    width: 100%;
+    height: auto;
+}
 /* Logo */
 .logo{
     width: 7.5rem;
     height: auto;
     display: inline-block;
+    /* margin-left: 0.25rem;*/
     margin-top: 0.25rem;
 }
 
-/* Definciones del Menu de Navegacion */
+/* Definciones generales del Menu de Navegacion */
+
 .nav{
     width: 100%;
+    /* height: 100%;*/
+    /* position:fixed;*/
     position:absolute; 
     background-color: var(--black);
     overflow: hidden;
@@ -73,17 +140,14 @@
 
 .menu a:hover{
     background-color: var(--grey);
-    display: block;
-
 }
-
 
 .nav{
     max-height: 0;
     transition: max-height .5s ease-out;
 }
 
-/* Menu Icon */
+/* dibujo del icono hamburguesa con 3 rayas */
 
 .hamb{
     cursor: pointer;
@@ -125,7 +189,7 @@
     display: none;
 }
 
-/* Toggle menu icon */
+/* transformacion del ícono hamburguesa en X */
 
 .side-menu:checked ~ nav{
     max-height: 100%;
@@ -145,13 +209,14 @@
     transform: rotate(45deg);
     top:0;
 }
+
 /* Punto de quiebre para pantallas intermedias (tablets) */
 @media screen and (min-width: 768px){
     .contenedor{
         grid-template-areas:     "encabezado encabezado encabezado"
                                  "contenido contenido contenido"
                                  "contenido contenido contenido"
-                                 "contenido contenido contenido"
+                                 "widget-1 widget-2 sidebar"
                                  "pie pie pie";
     }
     .nav{
@@ -173,32 +238,13 @@
         color: var(--grey);
         
     }
-    /* .nav{
-        max-height: none;
-        top: 0;
-        position: relative;
-        float: right;
-        width: fit-content;
-        background-color: transparent;
-
-    }
-    
-    .menu li{
-        float: left;
-    }
-
-    .menu a:hover{
-        background-color: transparent;
-        color: var(--grey);
-        
-    } */
     
     .hamb{
         display: none;
     }
 
     .logo{
-        width: 200px;
+        width: 11rem;
         height: auto;
         display: inline-block;
         margin-left: 0.25rem;
@@ -210,9 +256,9 @@
 @media screen and (min-width: 1024px){
     .contenedor{
         grid-template-areas: "encabezado encabezado encabezado"
-                             "contenido contenido contenido"
-                             "contenido contenido contenido"
-                             "contenido contenido contenido"
+                             "contenido contenido sidebar"
+                             "contenido contenido sidebar"
+                             "widget-1 widget-2 sidebar"
                              "pie pie pie";
     }
     .logo{
@@ -223,30 +269,67 @@
         margin-top: 0.25rem;
     }
 }
-/* Estilos para el formulario*/
-.fomulario {
-    text-align: center;
+
+/* Estilos del footer */
+.footer-social-media {
+    display: flex;
+    justify-content: center;
 }
 
-h1 {
-    width: 100%;
-    text-align: center;
-    background-color: var(--grey);
-    color: var(--white);
+.footer-social-media a {
+    text-decoration: none;
+    color: #ffffff;
     font-size: 2rem;
-    display: block;
-    margin-top: 0.67em;
-    margin-bottom: 0.67em;
-    margin-left: 0;
-    margin-right: 0;
-    padding: auto;
+    margin: 1rem;    
 }
 
-#enviar{
+.footer-social-media a:hover {
+    transition: .5s;
+}
+
+#instagram:hover {
+    color: hwb(59 15% 22%);
+}
+
+#facebook:hover {
+    color: #18ebf2;
+}
+
+#whatsapp:hover {
+    color: #bb450e;
+}
+
+.Youtube{
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+.Youtube iframe{
+    position: absolute;
+    top: 0%;
+    left: 0;
     width: 100%;
+    height: 100%;
 }
 
-/*----------------------------------------------------------------------------*/
-#mailto{
-    opacity: 0;
+.GoogleMaps{
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
 }
+.GoogleMaps iframe{
+    position: absolute;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+Footer
+© 2022 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+St

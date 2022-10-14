@@ -7,7 +7,7 @@ let header = `
     <nav class="nav">
         <ul class="menu">
             <li><a href="index.html">HOME</a></li>
-            <li><a href="index.html">HISTORIA</a></li>
+            <li><a href="history.html">HISTORIA</a></li>
             <li><a href="variedades.html">VARIEDADES</a> </li>
             <li><a href="contacto.html">CONTACTO</a></li>
         </ul>
