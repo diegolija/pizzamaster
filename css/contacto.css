@@ -2,9 +2,36 @@
     /*defino grid "First Mobile" */
     grid-template-areas:  "encabezado encabezado encabezado"
                           "contenido contenido contenido"
-                          "sidebar sidebar sidebar"
-                          "widget-1 widget-2 widget-2"
+                          "contenido contenido contenido"
+                          "contenido contenido contenido"
                           "pie pie pie";
+}
+
+/* Se definen clases y estilos propios de contacto.html */
+.fomulario {
+    text-align: center;
+}
+
+h1 {
+    width: 100%;
+    text-align: center;
+    background-color: var(--grey);
+    color: var(--white);
+    font-size: 2rem;
+    display: block;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    padding: auto;
+}
+
+#enviar{
+    width: 100%;
+}
+
+#mailto{
+    opacity: 0;
 }
 
 /* Punto de quiebre para pantallas intermedias (tablets) */
@@ -13,7 +40,7 @@
         grid-template-areas:     "encabezado encabezado encabezado"
                                  "contenido contenido contenido"
                                  "contenido contenido contenido"
-                                 "widget-1 widget-2 sidebar"
+                                 "contenido contenido contenido"
                                  "pie pie pie";
     }
 }
@@ -22,10 +49,9 @@
 @media screen and (min-width: 1024px){
     .contenedor{
         grid-template-areas: "encabezado encabezado encabezado"
-                             "contenido contenido sidebar"
-                             "contenido contenido sidebar"
-                             "widget-1 widget-2 sidebar"
+                             "contenido contenido contenido"
+                             "contenido contenido contenido"
+                             "contenido contenido contenido"
                              "pie pie pie";
     }
 }
-

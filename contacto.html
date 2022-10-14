@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/principal.css">
+    <link rel="stylesheet" href="css/contacto.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0cebf067a0.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <title>PizzaMaster - Las pizzas no son todas iguales</title>
+</head>
+
+<body>
+    <div class="contenedor">
+        <header class="encabezado" id="idheader">
+        </header>
+        <main class="contenido">
+            <div class="form-group">
+                <h1>Dejanos tus comentarios</h1>
+                <form name="form" id="form" action="https://formspree.io/f/xyyvjbad" method="post">
+                    <label class="label" for="nombre">Nombre Completo <span>*</span></label>
+                    <input  class="form-control" type="text" name="nombre" id="nombre" placeholder="Juan Perez" maxlength="100">
+                    <br>
+                    <label class="label" for="email">Correo electrónico <span>*</span></label>
+                    <input class="form-control" type="email" name="email" id="email" placeholder="jperez@gmail.com">
+                    <br>
+                    <label class="label" for="mensaje">Mensaje </label>
+                    <textarea class="form-control" name="mensaje" id="mensaje" cols="30" rows="10"></textarea>
+                    <br>
+                    <button class="btn btn-info" type="submit" id="enviar"><span>Enviar Mensaje</span></button>
+                </form>
+                <a href="mailto:luis.sottosanto@gmail.com" id="mailto">mail</a>
+            </div>
+        </main>
+        <footer class="pie" id="idfooter">
+        </footer>
+    </div>
+    <script src="js/contacto.js"></script>
+    <script src="js/scriptgral.js"></script>
+</body>
+
+</html>
